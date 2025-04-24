@@ -1,11 +1,15 @@
-# 🏗 Scaffold-ETH 2
+# 🏗 Scaffold-Yeet 🏗
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1eb04f3d-88a3-4105-b6da-10b3a1f848fe" alt="scaffold-yeet" width="300"/>
+</div>
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+🧪 A fork of Scaffold-Eth-2 to yeet with. An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
 ⚙️ Built using NextJS, RainbowKit, Foundry/Hardhat, Wagmi, Viem, and Typescript.
 
