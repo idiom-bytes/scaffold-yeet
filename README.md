@@ -31,18 +31,17 @@ Before you begin, you need to install the following tools:
 
 ## Quickstart
 
-To get started with Scaffold-ETH 2, follow the steps below:
+To get started with Scaffold-Yeet, follow the steps below:  
 
-1. Install the latest version of Scaffold-ETH 2
+1. Clone the latest Scaffold-Yeet and initialize it.
 
 ```
-npx create-eth@latest
+git clone https://github.com/idiom-bytes/scaffold-yeet.git
+cd scaffold-yeet/
+yarn install
 ```
 
-This command will install all the necessary packages and dependencies, so it might take a while.
-
-> [!NOTE]
-> You can also initialize your project with one of our extensions to add specific features or starter-kits. Learn more in our [extensions documentation](https://docs.scaffoldeth.io/extensions/).
+This will install all the necessary packages and dependencies, so it might take a while.
 
 2. Run a local network in the first terminal:
 
