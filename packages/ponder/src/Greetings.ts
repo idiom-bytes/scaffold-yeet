@@ -5,7 +5,7 @@ ponder.on("YourContract:GreetingChange", async ({ event, context }) => {
     // Create a new Greeting
     await context.db.insert(greeting).values({
         id: event.log.id,
-        source: "solidity",
+        source: "vyper",
         text: event.args.newGreeting,
         setterId: event.args.greetingSetter,
         premium: event.args.premium,
