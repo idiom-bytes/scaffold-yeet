@@ -32,7 +32,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     autoMine: true,
   });
 
-  await deploy("Greeting", {
+  await deploy("Greetings", {
     from: deployer,
     args: [deployer],
     log: true,
@@ -43,12 +43,12 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const yourContract = await hre.ethers.getContract<Contract>("YourContract", deployer);
   console.log("👋 Initial greeting:", await yourContract.greeting());
 
-  const greeting = await hre.ethers.getContract<Contract>("Greeting", deployer);
-  console.log("👋 Initial greeting:", await greeting.greeting());
+  const greetings = await hre.ethers.getContract<Contract>("Greetings", deployer);
+  console.log("👋 Initial greeting:", await greetings.greeting());
 };
 
 export default deployYourContract;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags YourContract
-deployYourContract.tags = ["YourContract"];
+deployYourContract.tags = ["YourContract", "Greetings"];
