@@ -1,7 +1,7 @@
 import { ponder } from "ponder:registry";
 import { greeting } from "ponder:schema";
 
-ponder.on("YourContract:GreetingChange", async ({ event, context }) => {
+ponder.on("Greetings:GreetingChange", async ({ event, context }) => {
     // Create a new Greeting
     await context.db.insert(greeting).values({
         id: event.log.id,

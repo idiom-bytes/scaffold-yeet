@@ -159,6 +159,8 @@ const PonderGreetings: NextPage = () => {
                   <p className="my-2 font-medium">{greeting.text}</p>
                   <p>from</p>
                   <Address address={greeting.setterId} />
+                  <p>via</p>
+                  <p className="my-2 font-medium">{greeting.source}</p>
                   <p>at</p>
                   <p className="my-2 font-medium">{new Date(greeting.timestamp * 1000).toLocaleString()}</p>
                   {greeting.premium && <p className="my-2 font-medium"> - Premium (Ξ{formatEther(greeting.value)})</p>}
