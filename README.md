@@ -111,6 +111,34 @@ For faster indexing, you can add the ***startBlock*** to each deployed contract 
 
 And then you have to set up the ```NEXT_PUBLIC_PONDER_URL``` env variable on your SE-2 dapp to use the deployed ponder indexer.
 
+## 🥷 Privy 
+
+To setup Privy, you'll have to complete a few steps.  
+
+1. Create an app on Privy
+
+Login to your dashboard @ `dashboard.privy.io` and create a new client app.
+
+2. Update your nextjs `.env`
+
+Set `NEXT_PUBLIC_PRIVY_API_KEY` to be your AppID
+
+3. Modify `PrivyScaffoldProvider.tsx`
+
+Change from
+```
+appId="cm09stjha011x8j4lpu8gt9jt"
+```
+
+To
+```
+appId=NEXT_PUBLIC_PRIVY_API_KEY
+```
+
+4. Visit the privy login page
+
+This should be available @ `localhost:3000/privy-login`
+
 ## Documentation
 
 Visit our [docs](https://docs.scaffoldeth.io) to learn all the technical details and guides of Scaffold-ETH 2.
