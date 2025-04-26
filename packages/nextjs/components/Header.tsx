@@ -26,6 +26,10 @@ export const menuLinks: HeaderMenuLink[] = [
     icon: <MagnifyingGlassIcon className="h-4 w-4" />,
   },
   {
+    label: "Privy Widget",
+    href: "/privy-login",
+  },
+  {
     label: "Debug Contracts",
     href: "/debug",
     icon: <BugAntIcon className="h-4 w-4" />,
