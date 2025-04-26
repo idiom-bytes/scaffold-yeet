@@ -95,6 +95,10 @@ You can index events by adding files to ```packages/ponder/src/``` (https://pond
 
 Run ```yarn ponder:dev``` to start the Ponder development server, for indexing and serving the GraphQL API endpoint at http://localhost:42069
 
+### Test your app
+
+[Visit the ponder page inside your app](http://localhost:3000/ponder-greetings) to view all contract events that were indexed by your Ponder service.
+
 ### Query the GraphQL API
 
 With the dev server running, open http://localhost:42069 in your browser to use the GraphiQL interface. GraphiQL is a useful tool for exploring your schema and testing queries during development. (https://ponder.sh/docs/query/graphql)
@@ -111,13 +115,17 @@ For faster indexing, you can add the ***startBlock*** to each deployed contract 
 
 And then you have to set up the ```NEXT_PUBLIC_PONDER_URL``` env variable on your SE-2 dapp to use the deployed ponder indexer.
 
-## 🥷 Privy 
+## 🥷 Privy
 
-To setup Privy, you'll have to complete a few steps.  
+We believe Privy to be a great service but can be very costly if you aren't well funded and are trying to build viral apps.  
+
+Please [note their pricing tiers](https://www.privy.io/pricing) and [reach out to their sales department](mailto:sales@privy.io) for additional answers.
+
+### To setup Privy
 
 1. Create an app on Privy
 
-Login to your dashboard @ `dashboard.privy.io` and create a new client app.
+Login to your [dashboard](https://dashboard.privy.io) and create a new client app.
 
 2. Update your nextjs `.env`
 
@@ -135,9 +143,40 @@ To
 appId=NEXT_PUBLIC_PRIVY_API_KEY
 ```
 
-4. Visit the privy login page
+4. Inside your app, visit the page and login via Privy
 
-This should be available @ `localhost:3000/privy-login`
+You can now login via the [Privy login page](localhost:3000/privy-login)
+
+### To remove Privy
+
+1. Delete the following folders and files
+
+```
+packages/nextjs/app/privy-login/
+packages/nextjs/app/PrivyScaffoldProvider.tsx
+```
+
+2. Delete the followiing lines from `ScaffoldEthAppWithProviders.tsx`
+
+```
+import { PrivyScaffoldProvider } from "./PrivyScaffoldProvider";
+...
+<PrivyScaffoldProvider>
+...
+</PrivyScaffoldProvider>
+```
+
+3. Delete from `.env.example`
+
+```
+NEXT_PUBLIC_PRIVY_API_KEY=
+```
+
+4. Delete from `packages/nextjs/package.json`
+
+```
+"@privy-io/react-auth": "latest",
+``` 
 
 ## Documentation
 
