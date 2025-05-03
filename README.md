@@ -115,6 +115,34 @@ For faster indexing, you can add the ***startBlock*** to each deployed contract 
 
 And then you have to set up the ```NEXT_PUBLIC_PONDER_URL``` env variable on your SE-2 dapp to use the deployed ponder indexer.
 
+## 🚪 Farcaster
+
+Farcaster is a decentralized social network that let's you build native integrations directly on them.
+
+This project already comes with a farcaster miniapp ready to go.
+
+After getting your NextJS app running, you should simulate it being deployed on a server so you can test the farcaster app in preview mode.
+
+1. Run ngrok from scaffold-yeet/
+
+`ngrok http 300`
+
+2. Copy your .env.example -> .env
+
+3. Modify NEXT_PUBLIC_URL to be your ngrok url
+
+`NEXT_PUBLIC_URL=http://randomip.ngrok-free.app`
+
+4. Open the online frames.js debugger in a browser
+
+https://debugger.framesjs.org/
+
+5. Paste your ngrok url, including the farcaster endpoint
+
+`http://randomip.ngrok-free.app/farcaster`
+
+That's it, you can now build your miniapp!
+
 ## 🥷 Privy
 
 We believe Privy to be a great service but can be very costly if you aren't well funded and are trying to build viral apps.  
