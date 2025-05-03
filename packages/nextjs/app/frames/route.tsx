@@ -3,7 +3,8 @@ import { frames } from "./frames";
 import { Button } from "frames.js/next";
 import { getFramesUrl } from "~~/utils/frames";
 
-const handleRequest = frames(async () => {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const handleRequest = frames(async (ctx: any) => {
   return {
     image: getFramesUrl("favicon_large.png"),
     buttons: [
