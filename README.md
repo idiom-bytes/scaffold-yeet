@@ -73,6 +73,55 @@ Run smart contract test with `yarn hardhat:test`
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/hardhat/deploy`
 
+## Devstack (Optional, CI + Fullstack)
+
+When you want an integrated stack runner (for CI-like verification or fullstack local startup), use `devstack`.
+
+Start all local services in the background:
+
+```
+yarn devstack:up
+```
+
+Inspect service state:
+
+```
+yarn devstack:status
+```
+
+Stop all services:
+
+```
+yarn devstack:down
+```
+
+### Verify Command
+
+Use the integrated verify runner to boot the stack and execute a custom verify command:
+
+```
+yarn devstack:verify
+```
+
+By default, this runs:
+
+```
+yarn next:check-types && yarn next:lint
+```
+
+Useful environment overrides:
+
+- `DEVSTACK_VERIFY_CMD`: custom verify command
+- `DEVSTACK_SKIP_APP=1`: skip starting Next.js app (recommended for headless runners)
+- `DEVSTACK_SKIP_DEPLOY=1`: skip deploy step when contracts are already deployed
+- `DEVSTACK_RUNTIME_DIR`: custom runtime directory for pid/log files (default is `/tmp/<repo>-devstack`)
+
+Example for CI-style verification:
+
+```
+DEVSTACK_SKIP_APP=1 DEVSTACK_VERIFY_CMD="yarn next:check-types && yarn hardhat:check-types" yarn devstack:verify
+```
+
 ## 🚀 Setup Ponder Extension
 
 This extension allows to use Ponder (https://ponder.sh/) for event indexing on an SE-2 dapp.
